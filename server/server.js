@@ -9,11 +9,17 @@ import stockRoute from './routes/stockRoute.js';
 import transactionRoute from './routes/transactionRoute.js';
 import orderRoute from './routes/orderRoute.js';
 
+
 dotenv.config();
 
 connectDB();
 
 const app = express();
+const cors = require("cors");
+
+app.use(cors({
+    origin: "https://stock-trading-app-nine.vercel.app/"
+}));
 
 app.use(cors());
 app.use(express.json());
